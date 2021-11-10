@@ -19,6 +19,16 @@ services:
       - db_root_password
       - db_password
 
+  phpmyadmin:
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: "mysql"
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8282:80'
+
   app:
     build: .
     container_name: app

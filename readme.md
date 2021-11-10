@@ -66,6 +66,13 @@ This will create a dockerized stack for a Laravel/Lumen application, consisted o
     $ composer create-project --prefer-dist laravel/lumen .
     $ nano .env
     $ php artisan migrate --seed
+    
+    or if you have existing project:
+    $ cp -r /your_project/* /Lumen-Docker/src/
+    $ nano .env (configure with the same setting db_password.txt)
+    $ docker exec -it app bash
+    $ composer install
+    
     ```
 
 5. That's it! Navigate to [http://localhost](http://localhost) to access the application.
@@ -80,3 +87,10 @@ The following values should be replaced in your `.env` file if you're willing to
     DB_USERNAME=user
     DB_PASSWORD=myuserpass
     
+**Access On** 
+
+You can access on:
+```
+http://localhost for Lumen/Laravel
+http://localhost:8282 for phpmyAdmin
+```
